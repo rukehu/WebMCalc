@@ -1,0 +1,81 @@
+{
+    "ExchangeRate" : {
+        "url" : "https://api.exchangerate-api.com/v4/latest/CNY",
+        "rates" : {
+            "CNY" : {
+                "name"  : "人民币",
+                "price" : 1
+            },
+            "USD" : {
+                "name"  : "美元",
+                "price" : "0.14"
+            },
+            "EUR" : {
+                "name" : "欧元",
+                "price" : "0.14"
+            }, 
+            "HKD" : {
+                "name" : "港币",
+                "price" : "0.14"
+            }, 
+            "SGD" : {
+                "name" : "新加坡",
+                "price" : "0.14"
+            },
+            "GBP" : {
+                "name" : "英镑",
+                "price" : "0.14"
+            },
+            "JPY" : {
+                "name" : "日元",
+                "price" : "0.14"
+            },
+            "RUB" : {
+                "name" : "卢布",
+                "price" : "0.14"
+            }, 
+            "INR" : {
+                "name" : "卢比",
+                "price" : "0.14"
+            },
+            "KRW" : {
+                "name" : "韩元",
+                "price" : "0.14"
+            },
+            "VND" : {
+                "name" : "越南盾",
+                "price" : "0.14"
+            }
+        }
+    },
+
+    "Record" : {
+        "rate" : ["USD", "CNY"],
+        "order"  :  {
+            "source"  : "CNY",
+            "srcCost" : 1,
+            "middle"  : "WMZ",
+            "target"  : "USDT"
+        },
+        "exchange" : {
+            "CNYbyWMZ" : {
+                "price"   : 6.10,
+                "feeMode" : "fixed",
+                "fee"     : 0
+            },
+            "WMZbyUSDT" : {
+                "price"   : 1.171,
+                "feeMode" : "rate",
+                "fee"     : 0.008
+            }
+        },
+        "withdrew" : {
+            "USDT" : {
+                "BSC" : 6,
+                "Erc20" : 20,
+                "Trc20" : 13
+            }
+
+        }
+    }
+}
