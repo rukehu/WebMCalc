@@ -10,6 +10,7 @@ import requests
 
 def real_time_rate(url, rates):
     requestCnt = 0
+
     while True:
         requestCnt += 1
         try:
@@ -17,17 +18,23 @@ def real_time_rate(url, rates):
             if response.status_code == 200:
                 json_data = response.json()
                 getRates = json_data["rates"]
+                #print(getRates)
 
+                for key, value in rates.items():
+                    if key in getRates:
+                        value["price"] = getRates[key]
                 break
+
             else:
                 print(f"Error: {response.status_code}")
+
         except:
             print("fialed to requests rates")
         
-        if requestCnt > 3:
+        if requestCnt > 5:
+            print("requests rates timeout ...")
             break
         time.sleep(3)
-
 
 
 class WebMoney(object):
@@ -36,7 +43,7 @@ class WebMoney(object):
     
     def __init__(self, config):
         self.root = tk.Tk()
-        self.root.title("WmCalc")
+        self.root.title("WebMoney")
 
         self.dropdown1 = ttk.Combobox(self.root, values=["Option 1", "Option 2", "Option 3"])
         self.dropdown2 = ttk.Combobox(self.root, values=["Choice A", "Choice B", "Choice C"])
@@ -76,7 +83,7 @@ def loadConfig():
     loadcnt = 0
     while True:
         loadcnt += 1
-        print("Config data loading [{}] ...".format(loadcnt))
+        
         try:
             with open("config.json", 'r', encoding='utf-8') as fr:
                 fdata = json.load(fr)
@@ -84,6 +91,8 @@ def loadConfig():
         except Exception as e:
             print("Loading data config ERROR, reload after 10s", e)
             time.sleep(10)
+        
+        print("Config data loading [{}] ...".format(loadcnt))
         if loadcnt > 10:
             break
 
@@ -92,6 +101,11 @@ def loadConfig():
 if __name__ == '__main__':
 
     cfgData = loadConfig()
+    # print(cfgData)
+    real_time_rate(cfgData["ExchangeRate"]["url"], cfgData["ExchangeRate"]["rates"])
+
+    print (cfgData["ExchangeRate"]["rates"])
+
 
     # wm = WebMoney(config)
     # wm.running()
