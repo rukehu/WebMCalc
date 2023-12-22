@@ -44,9 +44,32 @@ class WebMoney(object):
     def __init__(self, config):
         self.root = tk.Tk()
         self.root.title("WebMoney")
+        self.exchangeRate = config["ExchangeRate"]
+        self.record = config["Record"]
+        self.timeRegion = dict()
 
-        self.dropdown1 = ttk.Combobox(self.root, values=["Option 1", "Option 2", "Option 3"])
-        self.dropdown2 = ttk.Combobox(self.root, values=["Choice A", "Choice B", "Choice C"])
+        rates = self.exchangeRate ["rates"]
+        rateList_1 = list()
+        rateList_2 = list()
+
+        for key, value in rates:
+            data = key + " " + value["name"]
+            self.timeRegion[value["country"]] = value["area"]
+
+            if key == self.record["rate"][0]:
+                rateList_1.insert(0, data)
+            else:
+                rateList_1.append(data)
+                
+            if key == self.record["rate"][1]:
+                rateList_2.insert(0, data)
+            else:
+                rateList_2.append(data)
+
+        self.combox_rate1 = ttk.Combobox(self.root, values=rateList_1)
+        self.combox_rate2 = ttk.Combobox(self.root, values=rateList_2)
+
+
         
     def running(self):
         self.root.mainloop()

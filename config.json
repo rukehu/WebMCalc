@@ -3,53 +3,89 @@
         "url" : "https://api.exchangerate-api.com/v4/latest/CNY",
         "rates" : {
             "CNY" : {
-                "name"  : "人民币",
-                "price" : 1
+                "name"    : "人民币",
+                "price"   : 1,
+                "area"    : {
+                    "中国" : "Asia/Beijing"
+                }
             },
             "USD" : {
-                "name"  : "美元",
-                "price" : "0.14"
+                "name"    : "美元",
+                "price"   : "0.14",
+                "area"    : {
+                    "美国" : "America/New_York"
+                }
             },
             "EUR" : {
-                "name" : "欧元",
-                "price" : "0.14"
+                "name"    : "欧元",
+                "price"   : "0.14",
+                "area"    : {
+                     "法国"  : "Europe/Paris",
+                     "德国"  : "Europe/Berlin",
+                     "意大利" : "Europe/Rome"
+                }
             }, 
             "HKD" : {
-                "name" : "港币",
-                "price" : "0.14"
+                "name"    : "港币",
+                "price"   : "0.14",
+                "area"    : {
+                    "中国" : "Asia/Beijing"
+                }
             }, 
             "SGD" : {
-                "name" : "新加坡",
-                "price" : "0.14"
+                "name"    : "新加坡",
+                "price"   : "0.14",
+                "area"    : {
+                    "新加坡" : "Asia/Singapore"
+                }
             },
             "GBP" : {
-                "name" : "英镑",
-                "price" : "0.14"
+                "name"    : "英镑",
+                "price"   : "0.14",
+                "area"    : {
+                    "英国" : "Europe/London"
+                }
             },
             "JPY" : {
-                "name" : "日元",
-                "price" : "0.14"
+                "name"    : "日元",
+                "price"   : "0.14",
+                "area"    : {
+                    "日本" : "Asia/Tokyo"
+                }
             },
             "RUB" : {
-                "name" : "卢布",
-                "price" : "0.14"
+                "name"    : "卢布",
+                "price"   : "0.14",
+                "area"    : {
+                    "俄罗斯" : "Europe/Moscow"
+                }
             }, 
             "INR" : {
-                "name" : "卢比",
-                "price" : "0.14"
+                "name"    : "卢比",
+                "price"   : "0.14",
+                "area"    : {
+                    "印度" : "Asia/Kolkata"
+                }
             },
             "KRW" : {
-                "name" : "韩元",
-                "price" : "0.14"
+                "name"    : "韩元",
+                "price"   : "0.14",
+                "area"    : {
+                    "韩国" : "Asia/Seoul"
+                }
             },
             "VND" : {
-                "name" : "越南盾",
-                "price" : "0.14"
+                "name"    : "越南盾",
+                "price"   : "0.14",
+                "area"    : {
+                    "越南" : "Asia/Ho_Chi_Minh"
+                }
             }
         }
     },
 
     "Record" : {
+        "timeRegion" : "中国",
         "rate" : ["USD", "CNY"],
         "order"  :  {
             "source"  : "CNY",
